@@ -1,0 +1,52 @@
+defaults: &defaults
+  smtp:
+    address: smtp.exmail.qq.com
+    port: 25
+    user_name: notifications@360stones.com
+    password: bestone123
+    domain: yunlu6.com
+  sidekiq_namespace: 'bestone'
+  sidekiq_redis: 'redis://redis:6379/0'
+  oauth:
+    wechat:
+      app_id: ""
+      app_secret: ""
+    weibo:
+      app_id: "964674965"
+      app_secret: "db8cb6d4b6fe42721e45fc1fa12d84c9"
+    qq:
+      app_id: "101063017"
+      app_secret: "de991280d5b2ac6ff80bf533b0c90da7"
+  secret_key: "7eb53e016c68a3f299a508b6f086c9cd0bc7ab46aad3b78a5c7f92d03e49d623c7083b1ea713ea58177e6dbe6b5517c5a6084a585f57de959adfef8cda948268"
+  admin_emails:
+    - "test@test.com"
+  relic_key: ''
+  app_name: Bestone
+  sms_key: 4862ff3eb841a9e89ffb133c6db04bb0
+  qiniu:
+    access_key: '3l2F6e3bmg_EkYo8scdTIMyVFZQ9XlZBLiCVIVpt'
+    secret_key: 'gLuz8hc-VZBaRJ3l_xLuQ6UM45aXXCXMvBm9kTUe'
+    call_back_url: http://www.yunlu6.com
+    private_host: 7xjfsr.com2.z0.glb.qiniucdn.com
+    public_host: 7xjfsp.com2.z0.glb.qiniucdn.com
+  sidekiq:
+    admin_email: '23669982@qq.com'
+    admin_token: 'yunlu11'
+  redis_server:
+    host: redis
+    port: 6379
+
+development:
+  <<: *defaults
+  qiniu:
+    access_key: '3l2F6e3bmg_EkYo8scdTIMyVFZQ9XlZBLiCVIVpt'
+    secret_key: 'gLuz8hc-VZBaRJ3l_xLuQ6UM45aXXCXMvBm9kTUe'
+    call_back_url: http://test.yunlu6.com
+    private_host: 7xjfsr.com2.z0.glb.qiniucdn.com
+    public_host: 7xjfsp.com2.z0.glb.qiniucdn.com
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

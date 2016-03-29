@@ -1,0 +1,49 @@
+defaults: &defaults
+  sidekiq_namespace: 'golem'
+  secret_key: "b332864b19627b11ca00fbb70c266d59ed76899656ef766034196355da4eae9926f714ecff23c9b15465c1d6df3c30c3f9ad307ad4d6f05479164ed48756962e"
+  app_name: Golem
+  qiniu:
+    access_key: 3l2F6e3bmg_EkYo8scdTIMyVFZQ9XlZBLiCVIVpt
+    secret_key: gLuz8hc-VZBaRJ3l_xLuQ6UM45aXXCXMvBm9kTUe
+    call_back_url: http://www.yunlu6.com
+  redis:
+    cache:
+      host: redis
+      port: 6379
+    pubsub:
+      host: redis
+      port: 6379
+  outer_services:
+    giant:
+      url: http://www.yunlu6.com
+      access_key: gjrnf1vWkXe7RpxtKQag5HFRLoilzeg4dzDhNg==
+      secret_key: nRYztNzoeR2py9lqIZXVYgxaBxfdvRjDr-yg3A==
+
+development:
+  <<: *defaults
+  redis:
+    cache:
+      host: redis
+      port: 6379
+    pubsub:
+      host: redis
+      port: 6379
+  outer_services:
+    giant:
+      url: http://test.yunlu6.com
+      access_key: 8RoWFk9qdqCTBSQD3J1VM3/yalVlxTIBRoP6Jw==
+      secret_key: avD2Ixp1+b+FfSKkuHJp69JE6U5OTAquHdIoow==
+
+test:
+  <<: *defaults
+  redis_server:
+    host: 127.0.0.1
+    port: 50000
+  outer_services:
+    giant:
+      url: http://api.giant.com
+      access_key: gjrnf1vWkXe7RpxtKQag5HFRLoilzeg4dzDhNg==
+      secret_key: nRYztNzoeR2py9lqIZXVYgxaBxfdvRjDr-yg3A==
+
+production:
+  <<: *defaults

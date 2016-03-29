@@ -1,0 +1,34 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bestone_product_2015_09
+  host: db
+  pool: 5
+  username: wt
+  password: smellegg411322
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bestone_test
+  host: db
+  pool: 5
+  username: wt
+  password: smellegg411322
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: giant_product
+  host: db
+  pool: 5
+  username: bestone
+  password: q4V*t5YWwRtq92G&^nRDQE34 
