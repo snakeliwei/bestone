@@ -2,8 +2,8 @@
 set -e
 # Set app path
 APP_NAME='golem'
-APP_PATH=/home/deploy/production/$APP_NAME
-PRO_PATH=/home/deploy/production
+APP_PATH=/home/deploy/bestone/$APP_NAME
+PRO_PATH=/home/deploy/bestone
 
 echo "Start deployment"
 cd $APP_PATH
@@ -22,5 +22,5 @@ docker-compose up -d
 
 echo "Finished."
 cd $APP_PATH
-echo "$APP_NAME-master-$(git log -1|grep commit|awk '{print $2}'|cut -c1-8) has success deployed..." | mutt -s "The $APP_NAME has deployed success... " 15050239@qq.com
+#echo "$APP_NAME-master-$(git log -1|grep commit|awk '{print $2}'|cut -c1-8) has success deployed..." | mutt -s "The $APP_NAME has deployed success... " 15050239@qq.com
 

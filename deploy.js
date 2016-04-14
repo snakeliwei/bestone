@@ -1,7 +1,7 @@
 var http = require('http');
 var moment = require('moment')
 var createHandler = require('github-webhook-handler');
-var handler = createHandler({ path: '/deployer', secret: 'su!dA7eJ@bp$KyRGmp3523ekG8&TTC9$' });
+var handler = createHandler({ path: '/deployer', secret: '3MEY#F964H2Mz3sj5Fg&Z*q2**gzMnd^' });
 // 上面的 secret 保持和 GitHub 后台设置的一致
 
 function run_cmd(cmd, args, callback) {
@@ -30,7 +30,7 @@ handler.on('push', function (event) {
     event.payload.ref);
   if( event.payload.repository.name === 'golem' && event.payload.ref === 'refs/heads/master' ) {
     run_cmd('sh', ['./golemDeploy.sh'], function(text){ console.log(text) });
-  } else if( event.payload.repository.name === 'giant' && event.payload.ref === 'refs/heads/dev' ) {
+  } else if( event.payload.repository.name === 'giant' && event.payload.ref === 'refs/heads/staging' ) {
            run_cmd('sh', ['./giantDeploy.sh'], function(text){ console.log(text) });
   }
 });

@@ -3,7 +3,7 @@ upstream giant_server {
     }
 
 server {
-      server_name yunlu6.com www.yunlu6.com api.yunlu6.com;
+      server_name test.yunlu6.com;
       listen 80;
 
       client_max_body_size 5m;

@@ -3,7 +3,7 @@ upstream golem_server {
     }
 
 server {
-      server_name api.360stones.com www.360stones.com 360stones.com;
+      server_name test.360stones.com;
       listen 80;
 
       client_max_body_size 5m;
