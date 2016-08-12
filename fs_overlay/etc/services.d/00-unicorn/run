@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+bundle exec unicorn -E production -c ./config/unicorn.rb

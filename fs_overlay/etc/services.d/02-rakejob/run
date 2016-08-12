@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+bundle exec rake subscriber:sync_file RAILS_ENV=development
